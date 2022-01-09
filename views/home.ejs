@@ -3,8 +3,12 @@
     <p><%=content%></p>
     
  <% postlist.forEach(function(post){ %>
-       <h2><%=post.posttitle%></h2>
-       <p><%=post.postbody.substring(0,150)+"..."%><a href="/posts/<%=post.posttitle%>">Read More</a></p>
+       <h2><%=post.Posttitle%></h2>
+     <%  if(post.Postbody.length>150){ %>
+       <p><%=post.Postbody.substring(0,150)+"..."%><a href="/posts/<%=post._id%>">Read More</a></p>
+     <%  }else { %>
+             <p><%=post.Postbody+" "%><a href="/posts/<%=post._id%>">Go to page</a></p>
+     <%  }  %>
        
  <% }); %>
 
